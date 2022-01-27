@@ -3,6 +3,7 @@ os.system('cls')
 
 
 
+
 class Board():
     def __init__(self):#initialises a matrix  that stores the moves
         self.cells = [" "," "," "," "," "," "," "," "," "]
