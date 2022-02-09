@@ -1,8 +1,9 @@
 import sys
-sys.path.append("C:\Users\lachl\source\repos\OOP")
-from Board import Board
-from Pieces import Pieces
-from Rules import GameClass
+sys.path.append("..")
+from ..Board import Board
+from ..Pieces import Pieces
+from ..Rules import GameClass
+import numpy as np
 
 Turn = 0
 gameover = False
@@ -10,12 +11,12 @@ board = Board()
 wincheck = GameClass()
 
 def TSTINPUT (array):
+    Turn=0
+    a = np.array(array)
     while wincheck.gameover == False: #loops the turns until theres a win or draw
 
-        os.system('cls')
-    
         board.display()
-        O_choice = array[Turn] #p1 turn
+        O_choice = a[Turn] #p1 turn
         board.updatecell(O_choice-1, Pieces.player1)
         Turn += 1
     

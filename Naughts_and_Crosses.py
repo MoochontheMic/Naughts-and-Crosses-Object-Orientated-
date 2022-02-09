@@ -1,8 +1,8 @@
 import os
 import unittest
-from Board import Board
-from Pieces import Pieces
-from Rules import GameClass
+from .Board import Board
+from .Pieces import Pieces
+from .Rules import GameClass
 os.system('cls')
 
 print("Naughts and Crosses for Two-Players")
