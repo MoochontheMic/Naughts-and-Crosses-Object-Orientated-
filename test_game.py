@@ -1,10 +1,10 @@
 import os
 import unittest
 from Board import Board
-from Pieces import Pieces
+from Player import Player
 from Rules import GameClass
 from Test_Helpers import test_helpers
-import numpy as np
+# import numpy as np
 
 
 
