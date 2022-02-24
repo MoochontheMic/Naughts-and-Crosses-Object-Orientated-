@@ -13,10 +13,6 @@ class Board():
         """
         self.cells = [[' ' for item in range(MAX_HEIGHT)] for other in range(MAX_WIDTH)]
 
-    # @classmethod
-    # def getSize():
-    #     return len(self.cells)
-
     def display(self):
         """
         Terminal representation of the board
@@ -35,12 +31,17 @@ class Board():
         x = moveCoordinate[0]
         y = moveCoordinate[1]
 
-        if self.cells[x][y] == ' ':
-            self.cells[x][y] = player.name
+        try:
+            # Accounting for invalid move error, catch it and handle with an error message
+            if self.cells[x][y] == ' ':
+                self.cells[x][y] = player.name
+                player.positions.append(moveCoordinate)
+        except IndexError:
+            # Invalid move error
+            print('Invalid move, please try again')
     
-    def resetBoard(self, board: List[List]):
+    def resetBoard(self):
         """
         Resets the board when a user wants to play again
         """
-        for item in board:
-            item = ' '
+        self.__init__()

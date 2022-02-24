@@ -1,15 +1,15 @@
 # import sys
 # sys.path.append("..")
 from Board import Board
-from Pieces import Pieces
-from Rules import GameClass
+from Player import Player
+from Rules import Rules
 import numpy as np
 import os
 
 Turn = 0
 gameover = False
 board = Board()
-wincheck = GameClass()
+wincheck = Rules()
 class test_helpers():
     
     def TSTINPUT(self,array):
@@ -21,7 +21,7 @@ class test_helpers():
 
             
             O_choice = a[Turn] #p1 turn
-            board.updatecell(O_choice-1, Pieces.player1)
+            board.updatecell(O_choice-1, Player)
             Turn += 1
         
             wincheck.Ocheck(board.cells)
@@ -48,6 +48,6 @@ class test_helpers():
                 return 2
             else:
                 return 3
-    
+        
 
 #print(test_helpers().TSTINPUT([1,4,2,5,3,6,7,8,9]))

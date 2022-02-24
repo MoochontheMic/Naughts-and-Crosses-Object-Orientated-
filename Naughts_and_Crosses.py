@@ -1,17 +1,15 @@
 import os
-import unittest
-from .Board import Board
-from .Pieces import Pieces
-from .Rules import GameClass
+from Board import Board
+from Rules import Rules
 os.system('cls')
 
 print("Naughts and Crosses for Two-Players")
 Turn = 0
 gameover = False
 board = Board()
-wincheck = GameClass()
+wincheck = Rules()
 
-while wincheck.gameover == False: #loops the turns until theres a win or draw
+while not wincheck.gameover: # Whilst the game isn't over
 
     #os.system('cls')
     
@@ -42,14 +40,3 @@ if wincheck.draw == True:
 else:
     print("Game winner is ", wincheck.winner)   
 #prints the result
-
-
-
-         
-
-
-
-"""class TestGame(unittest.TestCase):
-    def test_OX(self):
-        self.assert(TSTINPUT([1,4,2,5,3,6,7,8,9]),3)
-        self.assert(TSTINPUT([9,4,2,5,3,6,7,8,1]),2)"""
