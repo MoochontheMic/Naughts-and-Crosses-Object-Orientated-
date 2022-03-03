@@ -30,15 +30,19 @@ class Rules():# class for the winning conditions
         """checks player has won"""
 
         for winningMove in allwinpos:
+            count = 0
             for coordinate in winningMove:
                 x, y = coordinate[0], coordinate[1]
-                print('-------------------------')
-                print (x,y)
-                print('-------------------------')
-                if board.cells[coordinate] == player.name:
-                    self.gameover = True
-                    self.winner = player.name
-                    break
+                # print('-------------------------')
+                # print (board.cells)
+                # print('-------------------------')
+                if board.cells[x][y] == player.name:
+                    count += 1
+                    if count == 3:
+                        self.gameover = True
+                        self.winner = player.name
+                        break
+                    
 
     def drawcheck(self,turn):#checks for a draw
         if turn == 9:

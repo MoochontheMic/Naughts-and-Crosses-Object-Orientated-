@@ -9,8 +9,10 @@ class TestRules():
         board = Board()
         player = Player('X')
         rules = Rules()
-        board.cells = [["X","X"," "],[" "," "," "],[" "," "," "]]
+        board.cells = [["X"," "," "],["X"," "," "],[" "," "," "]]
+        board.display()
         board.updatecell([2,0], player=player)
+        board.display()
         rules.wincheck(player, board)
         assert rules.winner == 'X'
 
