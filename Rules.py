@@ -1,22 +1,49 @@
-class GameClass():# class for the winning conditions
-    gameover = False
-    draw = False
-    winpos1 =[0,3,6,0,1,2,0,2]
-    winpos2 =[1,4,7,3,4,5,4,4]
-    winpos3 =[2,5,8,6,7,8,8,6]
-    
-    def xcheck(self,array):# checks if p1 has won
-        for i in range(0,8):
-            if array[self.winpos1[i]] == "X" and array[self.winpos2[i]] == "X" and array[self.winpos3[i]] == "X":
-                self.gameover = True
-                self.winner = "X"
-                continue
-    def Ocheck(self,array):#checks if p2 has won
-        for i in range(0,8):
-            if array[self.winpos1[i]] == "O" and array[self.winpos2[i]] == "O" and array[self.winpos3[i]] == "O":
-                self.gameover = True
-                self.winner = "O"
-                continue
+from Board import Board
+from Player import Player
+
+
+# CAPITALIZE constants here
+draw = False
+winner = ' '
+
+winpos1 =[[0,0],[0,1],[0,2]]
+winpos2 =[[1,0],[1,1],[1,2]]
+winpos3 =[[2,0],[2,1],[2,2]]
+
+winpos4 =[[0,0],[1,0],[2,0]]
+winpos5 =[[0,1],[1,1],[2,1]]
+winpos6 =[[0,2],[1,2],[2,2]]
+
+winpos7 = [[0,0],[1,1],[2,2]]
+winpos8 = [[0,2],[1,1],[2,0]]
+
+allwinpos = [winpos1,winpos2,winpos3,winpos4,winpos5,winpos6,winpos7,winpos8]
+
+
+class Rules():# class for the winning conditions
+
+    def __init__(self):
+        self.winner = None
+        self.gameover = False
+
+    def wincheck(self, player: Player, board: Board):
+        """checks player has won"""
+
+        for winningMove in allwinpos:
+            count = 0
+            for coordinate in winningMove:
+                x, y = coordinate[0], coordinate[1]
+                # print('-------------------------')
+                # print (board.cells)
+                # print('-------------------------')
+                if board.cells[x][y] == player.name:
+                    count += 1
+                    if count == 3:
+                        self.gameover = True
+                        self.winner = player.name
+                        break
+                    
+
     def drawcheck(self,turn):#checks for a draw
         if turn == 9:
             self.gameover = True

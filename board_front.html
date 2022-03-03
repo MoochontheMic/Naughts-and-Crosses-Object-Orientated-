@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+</html>
+<head>
+    <title>Naughts and Crosses</title>
+    <style>
+            .row div {
+              padding: 10px;
+              border: 1px solid black;
+              height: 30px;
+              width: 30px;
+              float: left;
+            }
+            .row {
+              clear: both;
+            }
+    </style>
+  <script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.7.5/brython.min.js">
+  </script>
+</head>
+<body onload=brython()>
+        Click to play Noughts and Crosses.<br/>
+        <div>
+          <div class="row">
+            <div id="0_0"onclick="place(this)"></div>
+            <div id="1_0"onclick="place(this)"></div>
+            <div id="2_0"onclick="place(this)"></div>
+          </div>
+          <div class="row">
+            <div id="0_1"onclick="place(this)"></div>
+            <div id="1_1"onclick="place(this)"></div>
+            <div id="2_1"onclick="place(this)"></div>
+          </div>
+          <div class="row">
+            <div id="0_2"onclick="place(this)"></div>
+            <div id="1_2"onclick="place(this)"></div>
+            <div id="2_2"onclick="place(this)"></div>
+          </div>
+        </div>
+        
+        <script type="text/python" id="script1">
+          from browser import document, console, html
+          from Board import Board
+          from Pieces import Pieces
+          from Rules import GameClass
+            
+          print('sometghing')
+          <table>
+              <tr>
+                <td>TEST</td>
+              <tr>
+              <tr>
+                <td>MARRTIN</td>
+              <tr>
+          </table>
+
+
+        </script>
+      </body>
+
+
+</html>
