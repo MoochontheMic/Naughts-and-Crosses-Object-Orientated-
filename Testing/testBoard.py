@@ -15,20 +15,24 @@ class TestBoard():
     #     print('\n')
     #     board.display()
 
-    def testBoardReset(self):
+    # def testBoardReset(self):
+    #     board = Board()
+    #     player = Player('X')
+    #     moveCoordinate = [0,0]
+    #     board.updatecell(moveCoordinate, player=player)
+    #     board.resetBoard()
+
+    #     assert board.cells == [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
+    #     assert moveCoordinate in player.positions
+
+    # def testInvalidMove(self, capsys):
+    #     board = Board()
+    #     player = Player('X')
+
+    #     board.updatecell([3,3], player=player)
+    #     captured = capsys.readouterr()
+    #     assert 'Invalid move, please try again' in captured.out
+    def testDispb(self):
         board = Board()
-        player = Player('X')
-        moveCoordinate = [0,0]
-        board.updatecell(moveCoordinate, player=player)
-        board.resetBoard()
-
-        assert board.cells == [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
-        assert moveCoordinate in player.positions
-
-    def testInvalidMove(self, capsys):
-        board = Board()
-        player = Player('X')
-
-        board.updatecell([3,3], player=player)
-        captured = capsys.readouterr()
-        assert 'Invalid move, please try again' in captured.out
+        player = Player("X")
+        board.display()

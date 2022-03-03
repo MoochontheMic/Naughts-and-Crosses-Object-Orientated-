@@ -3,7 +3,6 @@ from Player import Player
 
 
 # CAPITALIZE constants here
-gameover = False
 draw = False
 winner = ' '
 
@@ -25,6 +24,7 @@ class Rules():# class for the winning conditions
 
     def __init__(self):
         self.winner = None
+        self.gameover = False
 
     def wincheck(self, player: Player, board: Board):
         """checks player has won"""

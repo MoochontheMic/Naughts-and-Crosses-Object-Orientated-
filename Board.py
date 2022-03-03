@@ -17,11 +17,15 @@ class Board():
         """
         Terminal representation of the board
         """
-        print(" ",self.cells[0][0]," | ",self.cells[1][0]," | ",self.cells[2][0]," ") #automate this like (embedded list comprehension)
-        print("_________________")
-        print(" ",self.cells[0][1]," | ",self.cells[1][1]," | ",self.cells[2][1]," ")
-        print("_________________")
-        print(" ",self.cells[0][2]," | ",self.cells[1][2]," | ",self.cells[2][2]," ")
+        print('\n')
+        print("    ","1","   ","2","   ","3"," ")
+        print("   _________________")
+        print("1 | ",self.cells[0][0]," | ",self.cells[1][0]," | ",self.cells[2][0]," ") #automate this like (embedded list comprehension)
+        print("   _________________")
+        print("2 | ",self.cells[0][1]," | ",self.cells[1][1]," | ",self.cells[2][1]," ")
+        print("   _________________")
+        print("3 | ",self.cells[0][2]," | ",self.cells[1][2]," | ",self.cells[2][2]," ")
+        print('\n')
         
     def updatecell(self, moveCoordinate: List, player: Player):
         """
@@ -39,6 +43,8 @@ class Board():
         except IndexError:
             # Invalid move error
             print('Invalid move, please try again')
+        
+        return True
     
     def resetBoard(self):
         """
