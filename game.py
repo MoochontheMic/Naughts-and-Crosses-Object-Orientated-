@@ -51,7 +51,10 @@ class Game():
                 rules.gameover = True
         board.display()
         if not draw:
-            print('Winner is ', currentPlayer)
+            if currentPlayer == player1:
+                print('Winner is X!')
+            else:
+                print('Winner is O!')
         else:
             print('Game is a draw')
     # if __name__ == '__main__':

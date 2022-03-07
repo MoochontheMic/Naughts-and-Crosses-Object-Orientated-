@@ -1,5 +1,5 @@
 import pytest
-from Player import Player
+from ..Player import Player
 from ..Board import Board
 
 class TestBoard():
@@ -32,7 +32,10 @@ class TestBoard():
     #     board.updatecell([3,3], player=player)
     #     captured = capsys.readouterr()
     #     assert 'Invalid move, please try again' in captured.out
-    def testDispb(self):
-        board = Board()
-        player = Player("X")
-        board.display()
+
+    # def testDispb(self):
+    #     board = Board()
+    #     player = Player("X")
+    #     board.display()
+
+    
