@@ -2,10 +2,12 @@ from typing import List
 
 from Player import Player
 
-
 MAX_HEIGHT = 3
 MAX_WIDTH = 3
 
+"""
+Implements a 6x6 board for a game of naughts and crosses
+"""
 class Board():
     def __init__(self):
         """
